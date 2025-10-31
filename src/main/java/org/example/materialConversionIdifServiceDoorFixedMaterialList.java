@@ -3,19 +3,14 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.example.materialConversionCalculateMaterialHisCode_11PLT003_00000;
-
 public class materialConversionIdifServiceDoorFixedMaterialList {
-
-    public materialConversionIdifServiceDoorFixedMaterialList(String serviceDoor) {
-    }
 
     public static List<Material> materialConversionIdifServiceDoorFixedMaterialList(String DOOR_NAME, float DOOR_LENGTH, float DOOR_WIDTH) {
 
 
         List<Material> materialArrayList = new ArrayList<>();
 
-        float materialConversionCalculateMaterialHisCode_11PLT003_00000 = org.example.materialConversionCalculateMaterialHisCode_11PLT003_00000.materialConversionCalculateMaterialHisCode_11PLT003_00000("Service Door", DOOR_LENGTH, DOOR_WIDTH);
+        float materialConversionCalculateMaterialHisCode_11PLT003_00000 = materialConversionCalculateMaterialQuantityForServiceDoor.materialConversionCalculateMaterialHisCode_11PLT003_00000(DOOR_LENGTH, DOOR_WIDTH);
 
         switch (DOOR_NAME) {
             case "Service Door":
@@ -57,23 +52,4 @@ public class materialConversionIdifServiceDoorFixedMaterialList {
 
 }
 
-class Material {
-    String code;
-    float quantity;
 
-    Material(String code, float quantity) {
-        this.code = code;
-        this.quantity = quantity;
-    }
-
-
-    Material(String code, int quantity) {
-        this.code = code;
-        this.quantity = quantity;
-    }
-
-    @Override
-    public String toString() {
-        return "Code: " + code + ", Quantity: " + quantity;
-    }
-}
