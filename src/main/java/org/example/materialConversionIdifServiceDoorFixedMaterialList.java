@@ -39,6 +39,14 @@ public class materialConversionIdifServiceDoorFixedMaterialList {
 
 
             case "Hinged Door":
+                materialArrayList.add(new Material("13CEC604 0000", 1));  // Ext. handle CSI with lock RAL7004/black with MTH logo
+                materialArrayList.add(new Material("13CN603 00000", 1));  // Int. handle CSI RAL7004/green certified EN179:2008
+                materialArrayList.add(new Material("25 AST 138 13067", 1));  // Int. handle CSI striker RAL7004
+                materialArrayList.add(new Material("13 CSC 700 15070", 2));  // Tie rood RAL7004 for CSI handle
+                materialArrayList.add(new Material("25AST247 13070", 1));  // Drive staff for CSI handle
+                materialArrayList.add(new Material("25CAT250 13076", 2));  // Tube for CSI handle
+                materialArrayList.add(new Material("15VAR100 00000", 1));  // Valve for foaming
+
                 break;
 
 
