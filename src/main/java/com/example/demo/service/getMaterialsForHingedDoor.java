@@ -75,7 +75,8 @@ public class getMaterialsForHingedDoor {
         }
 
 
-        // get
+        // get material which depend on DOOR_CLOSER and DOOR_CLOSER is exist or not
+
 
 
         // get material which depend on DOOR_HUGE and DOOR_HUGE is number
