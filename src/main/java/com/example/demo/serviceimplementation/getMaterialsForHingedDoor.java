@@ -41,8 +41,6 @@ public class getMaterialsForHingedDoor {
 
         // get material which depend on DOOR_DIRECTION and DOOR_DIRECTION is right or left
 
-        // get material which depend on frame info
-        materialArrayList.addAll(getFrameMaterialsForHingedDoor());
 
         // get material which depend on porthole info
         if (doorPorthole.existPorthole) {
@@ -76,24 +74,21 @@ public class getMaterialsForHingedDoor {
 
 
         // get material which depend on DOOR_CLOSER and DOOR_CLOSER is exist or not
-
+        if (DOOR_CLOSER == "Exist") {
+            materialArrayList.add(new Material("00000000 00000", 1));  // Door closer for hinged door
+        }
 
 
         // get material which depend on DOOR_HUGE and DOOR_HUGE is number
         materialArrayList.add(new Material("14INO002 P0002", DOOR_HUGE));
 
-        // get material which fixed for any options
 
         // added fixed material to materialList
         materialArrayList.addAll(materialConversionIdifServiceDoorFixedMaterialList.materialConversionIdifServiceDoorFixedMaterialList(DOOR_NAME, DOOR_LENGTH, DOOR_WIDTH));
 
+        // get material which depend on internal sheet info
+
         return materialArrayList;
-    }
-
-
-    public static List<Material> getFrameMaterialsForHingedDoor() {
-
-        return new ArrayList<>();
     }
 
 }
