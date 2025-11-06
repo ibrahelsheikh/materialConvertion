@@ -1,6 +1,6 @@
 package com.example.demo.serviceimplementation;
 
-class Material {
+public class Material {
     String code;
     float quantity;
 
