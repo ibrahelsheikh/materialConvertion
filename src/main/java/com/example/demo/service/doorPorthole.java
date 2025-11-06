@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
 public class doorPorthole {
-    boolean existCloser;
-    String closerCheap;       // can be Oval or Circular
+    boolean existPorthole;
+    String portholeCheap;       // can be Oval or Circular
 }
