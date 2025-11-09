@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class getMaterialsForSlidingDoor {
-    public static List<Material> getMaterialsForSlidingDoor(boolean DOOR_TYPE,
+    public static List<Material> getMaterialsForSlidingDoor(String DOOR_TYPE,
                                                             float DOOR_THICKNESS,
                                                             float DOOR_LENGTH,
                                                             float DOOR_WIDTH,

@@ -5,11 +5,11 @@ import java.util.List;
 
 public class getMaterialsForServiceDoor {
 
-    public static List<Material> getMaterialsForServiceDoor(boolean DOOR_TYPE,
+    public static List<Material> getMaterialsForServiceDoor(String DOOR_TYPE,
                                                             float DOOR_THICKNESS,
                                                             float DOOR_LENGTH,
                                                             float DOOR_WIDTH,
-                                                            boolean DOOR_DIRECTION,
+                                                            String DOOR_DIRECTION,
                                                             String FRAME_TYPE,
                                                             String FRAME_MOUNTING_TYPE,
                                                             int FRAME_THICKNESS,
@@ -28,14 +28,14 @@ public class getMaterialsForServiceDoor {
         List<Material> materialArrayList = new ArrayList<>();
 
         // get material which depend on DOOR_TYPE & DOOR_TYPE can be single or double
-        if (DOOR_TYPE == false) {
+        if (DOOR_TYPE == "single") {
             materialArrayList.add(new Material("00000000 00000", 10));   // single
         } else {
             materialArrayList.add(new Material("00000000 00000", 12));    // double
         }
 
         // get material which depend on DOOR_DIRECTION and DOOR_DIRECTION is right or left
-        if (DOOR_DIRECTION == false) {
+        if (DOOR_DIRECTION == "right") {
             materialArrayList.add(new Material("00000000 00000", 0));   // right
         } else {
             materialArrayList.add(new Material("00000000 00000", 0));
