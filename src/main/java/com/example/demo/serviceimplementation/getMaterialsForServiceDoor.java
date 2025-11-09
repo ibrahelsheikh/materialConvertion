@@ -11,10 +11,11 @@ public class getMaterialsForServiceDoor {
                                                             float DOOR_WIDTH,
                                                             boolean DOOR_DIRECTION,
                                                             String FRAME_TYPE,
-                                                            float DOOR_FRAME_THICKNESS,
+                                                            String FRAME_MOUNTING_TYPE,
+                                                            int FRAME_THICKNESS,
                                                             String INTERNAL_SHEET_TYPE,
                                                             String INTERNAL_SHEET_COLOR_CODE,
-                                                            String INTERNAL_SHEET_THICKNESS,
+                                                            int INTERNAL_SHEET_THICKNESS,
                                                             String EXTERNAL_SHEET_TYPE,
                                                             String EXTERNAL_SHEET_COLOR_CODE,
                                                             float EXTERNAL_SHEET_THICKNESS,
@@ -58,6 +59,16 @@ public class getMaterialsForServiceDoor {
 
         // added fixed material to materialList
         materialArrayList.addAll(materialConversionIdifServiceDoorFixedMaterialList.materialConversionIdifServiceDoorFixedMaterialList(DOOR_NAME, DOOR_LENGTH, DOOR_WIDTH));
+
+        // get material which depend on internal sheet info
+        getInternalSheetMaterials.getInternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, INTERNAL_SHEET_THICKNESS, INTERNAL_SHEET_TYPE, INTERNAL_SHEET_COLOR_CODE);
+
+        // get material which depend on EXTERNAL sheet info
+        getExternalSheetMaterials.getExternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, INTERNAL_SHEET_THICKNESS, INTERNAL_SHEET_TYPE, INTERNAL_SHEET_COLOR_CODE);
+
+        //  get frame data
+        getFrameMaterials.getFrameMaterials(DOOR_LENGTH, DOOR_WIDTH, FRAME_TYPE, FRAME_MOUNTING_TYPE, FRAME_THICKNESS);
+
 
         return materialArrayList;
     }

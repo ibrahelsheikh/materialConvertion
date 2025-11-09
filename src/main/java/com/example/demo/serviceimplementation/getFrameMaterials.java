@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class getFrameMaterials {
-    public static List<Material> getFrameMaterials (String DOOR_LENGTH,
-                                                    String DOOR_WIDTH ,
+    public static List<Material> getFrameMaterials (float DOOR_LENGTH,
+                                                    float DOOR_WIDTH ,
                                                     String FRAME_TYPE ,
                                                     String FRAME_MOUNTING_TYPE,
                                                     int FRAME_THICKNESS){

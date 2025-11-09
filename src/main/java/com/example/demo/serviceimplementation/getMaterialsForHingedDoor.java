@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class getMaterialsForHingedDoor {
-    public static List<Material> getMaterialsForHingedDoor(boolean DOOR_TYPE,
+    public static List<Material> getMaterialsForHingedDoor(String DOOR_TYPE,
                                                            int DOOR_THICKNESS,
                                                            float DOOR_LENGTH,
                                                            float DOOR_WIDTH,
                                                            boolean DOOR_DIRECTION,
                                                            String FRAME_TYPE,
-                                                           float DOOR_FRAME_THICKNESS,
+                                                           String FRAME_MOUNTING_TYPE,
+                                                           int FRAME_THICKNESS,
                                                            String INTERNAL_SHEET_TYPE,
                                                            String INTERNAL_SHEET_COLOR_CODE,
                                                            int INTERNAL_SHEET_THICKNESS,
@@ -26,7 +27,7 @@ public class getMaterialsForHingedDoor {
         List<Material> materialArrayList = new ArrayList<>();
 
         // Check if huge door number is valid
-        if (DOOR_TYPE == true) { // single door
+        if (DOOR_TYPE == "single") { // single door
             if (DOOR_HUGE >= 2) {
                 System.out.println("Door number is invalid for single door; it should be less than 2.");
             }
@@ -87,10 +88,13 @@ public class getMaterialsForHingedDoor {
         materialArrayList.addAll(materialConversionIdifServiceDoorFixedMaterialList.materialConversionIdifServiceDoorFixedMaterialList(DOOR_NAME, DOOR_LENGTH, DOOR_WIDTH));
 
         // get material which depend on internal sheet info
-        getInternalSheetMaterials.getInternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH ,INTERNAL_SHEET_THICKNESS,INTERNAL_SHEET_TYPE ,INTERNAL_SHEET_COLOR_CODE );
+        getInternalSheetMaterials.getInternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, INTERNAL_SHEET_THICKNESS, INTERNAL_SHEET_TYPE, INTERNAL_SHEET_COLOR_CODE);
 
         // get material which depend on EXTERNAL sheet info
-        getExternalSheetMaterials.getExternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH ,INTERNAL_SHEET_THICKNESS,INTERNAL_SHEET_TYPE ,INTERNAL_SHEET_COLOR_CODE );
+        getExternalSheetMaterials.getExternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, INTERNAL_SHEET_THICKNESS, INTERNAL_SHEET_TYPE, INTERNAL_SHEET_COLOR_CODE);
+
+        //  get frame data
+        getFrameMaterials.getFrameMaterials(DOOR_LENGTH, DOOR_WIDTH, FRAME_TYPE, FRAME_MOUNTING_TYPE, FRAME_THICKNESS);
 
 
         return materialArrayList;
