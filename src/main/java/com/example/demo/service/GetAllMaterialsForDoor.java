@@ -4,7 +4,7 @@ import com.example.demo.serviceimplementation.Material;
 
 import java.util.List;
 
-public interface getAllMaterialsForDoor {
+public interface GetAllMaterialsForDoor {
     List<Material> getAllMaterialsForDoor();
 
 

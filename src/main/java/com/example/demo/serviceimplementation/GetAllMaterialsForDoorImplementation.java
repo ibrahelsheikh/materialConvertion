@@ -1,11 +1,11 @@
 package com.example.demo.serviceimplementation;
 
-import com.example.demo.service.getAllMaterialsForDoor;
+import com.example.demo.service.GetAllMaterialsForDoor;
 
 import java.util.List;
 
 // Implementation
-public class GetAllMaterialsForDoorImplementation implements getAllMaterialsForDoor {
+public class GetAllMaterialsForDoorImplementation implements GetAllMaterialsForDoor {
 
 
     @Override
