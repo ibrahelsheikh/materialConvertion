@@ -2,6 +2,7 @@ package com.example.demo.serviceimplementation;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class getMaterialsForHingedDoor {
     public static List<Material> getMaterialsForHingedDoor(String DOOR_TYPE,
@@ -27,7 +28,7 @@ public class getMaterialsForHingedDoor {
         List<Material> materialArrayList = new ArrayList<>();
 
         // Check if huge door number is valid
-        if (DOOR_TYPE == "single") { // single door
+        if (Objects.equals(DOOR_TYPE , "single")) { // single door
             if (DOOR_HUGE >= 2) {
                 System.out.println("Door number is invalid for single door; it should be less than 2.");
             }
@@ -46,7 +47,7 @@ public class getMaterialsForHingedDoor {
         // get material which depend on porthole info
         if (doorPorthole.existPorthole) {
             int portHoleGasketLenghth;
-            if (doorPorthole.portholeCheap == "Circular") {
+            if (doorPorthole.portholeCheap.equals("Circular")) {
                 // single door && porthole exist
                 portHoleGasketLenghth = 1;
 
@@ -75,7 +76,7 @@ public class getMaterialsForHingedDoor {
 
 
         // get material which depend on DOOR_CLOSER and DOOR_CLOSER is exist or not
-        if (DOOR_CLOSER == "Exist") {
+        if (DOOR_CLOSER.equals("Exist")) {
             materialArrayList.add(new Material("00000000 00000", 1));  // Door closer for hinged door
         }
 

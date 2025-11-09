@@ -2,6 +2,7 @@ package com.example.demo.serviceimplementation;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class getMaterialsForServiceDoor {
 
@@ -28,14 +29,14 @@ public class getMaterialsForServiceDoor {
         List<Material> materialArrayList = new ArrayList<>();
 
         // get material which depend on DOOR_TYPE & DOOR_TYPE can be single or double
-        if (DOOR_TYPE == "single") {
+        if (Objects.equals(DOOR_TYPE, "single")) {
             materialArrayList.add(new Material("00000000 00000", 10));   // single
         } else {
             materialArrayList.add(new Material("00000000 00000", 12));    // double
         }
 
         // get material which depend on DOOR_DIRECTION and DOOR_DIRECTION is right or left
-        if (DOOR_DIRECTION == "right") {
+        if (Objects.equals(DOOR_DIRECTION, "right")) {
             materialArrayList.add(new Material("00000000 00000", 0));   // right
         } else {
             materialArrayList.add(new Material("00000000 00000", 0));
