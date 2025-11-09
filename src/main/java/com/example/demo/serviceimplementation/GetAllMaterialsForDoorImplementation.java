@@ -5,7 +5,7 @@ import com.example.demo.service.getAllMaterialsForDoor;
 import java.util.List;
 
 // Implementation
-public class getAllMaterialsForDoorImplementation implements getAllMaterialsForDoor {
+public class GetAllMaterialsForDoorImplementation implements getAllMaterialsForDoor {
 
 
     @Override

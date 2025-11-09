@@ -3,7 +3,7 @@ package com.example.demo.serviceimplementation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class getFrameMaterials {
+public class GetFrameMaterials {
     public static List<Material> getFrameMaterials (float DOOR_LENGTH,
                                                     float DOOR_WIDTH ,
                                                     String FRAME_TYPE ,

@@ -3,14 +3,14 @@ package com.example.demo.serviceimplementation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class materialConversionIdifServiceDoorFixedMaterialList {
+public class MaterialConversionIdifServiceDoorFixedMaterialList {
 
     public static List<Material> materialConversionIdifServiceDoorFixedMaterialList(String DOOR_NAME, float DOOR_LENGTH, float DOOR_WIDTH) {
 
 
         List<Material> materialArrayList = new ArrayList<>();
 
-        float materialConversionCalculateMaterialHisCode_11PLT003_00000 = materialConversionCalculateMaterialQuantityForServiceDoor.materialConversionCalculateMaterialHisCode_11PLT003_00000(DOOR_LENGTH, DOOR_WIDTH);
+        float materialConversionCalculateMaterialHisCode_11PLT003_00000 = MaterialConversionCalculateMaterialQuantityForServiceDoor.materialConversionCalculateMaterialHisCode_11PLT003_00000(DOOR_LENGTH, DOOR_WIDTH);
 
         switch (DOOR_NAME) {
             case "Service Door":

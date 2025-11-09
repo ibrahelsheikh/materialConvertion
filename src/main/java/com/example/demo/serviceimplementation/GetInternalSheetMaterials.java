@@ -3,7 +3,7 @@ package com.example.demo.serviceimplementation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class getInternalSheetMaterials {
+public class GetInternalSheetMaterials {
     public static List<Material> getInternalSheetMaterials(float DOOR_LENGTH,
                                                            float DOOR_WIDTH,
                                                            int INTERNAL_SHEET_THICKNESS,

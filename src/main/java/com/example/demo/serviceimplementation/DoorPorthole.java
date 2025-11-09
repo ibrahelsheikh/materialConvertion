@@ -1,6 +1,6 @@
 package com.example.demo.serviceimplementation;
 
-public class doorPorthole {
+public class DoorPorthole {
     boolean existPorthole;
     String portholeShape;       // can be Oval or Circular
 }

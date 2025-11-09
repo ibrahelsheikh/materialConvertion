@@ -1,6 +1,6 @@
 package com.example.demo.serviceimplementation;
 
-public class materialConversionCalculateMaterialQuantityForServiceDoor {
+public class MaterialConversionCalculateMaterialQuantityForServiceDoor {
 
     public static float materialConversionCalculateMaterialHisCode_11PLT003_00000(float DOOR_LENGTH, float DOOR_WIDTH) {
 

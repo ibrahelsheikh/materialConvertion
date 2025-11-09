@@ -1,6 +1,6 @@
 package com.example.demo.serviceimplementation;
 
-public class materialConversionCalculateMaterialQuantityForHingedDoor {
+public class MaterialConversionCalculateMaterialQuantityForHingedDoor {
 
     // DOOR_LENGTH and DOOR_WIDTH are in cm
 
