@@ -1,12 +1,16 @@
 package com.example.demo.serviceimplementation;
 
+import com.example.demo.enums.DoorName;
+import com.example.demo.enums.DoorType;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class GetMaterialsForServiceDoor {
 
-    public static List<Material> getMaterialsForServiceDoor(String DOOR_TYPE,
+    public static List<Material> getMaterialsForServiceDoor(Parameters parameters,
+                                                            String DOOR_TYPE,
                                                             float DOOR_THICKNESS,
                                                             float DOOR_LENGTH,
                                                             float DOOR_WIDTH,
@@ -24,12 +28,12 @@ public class GetMaterialsForServiceDoor {
                                                             int DOOR_HUGE,
                                                             String DOOR_CLOSER) {
 
-        final String DOOR_NAME = "Service Door";
+        parameters.DOOR_NAME = DoorName.SERVICE_DOOR;
 
         List<Material> materialArrayList = new ArrayList<>();
 
         // get material which depend on DOOR_TYPE & DOOR_TYPE can be single or double
-        if (Objects.equals(DOOR_TYPE, "single")) {
+        if (parameters.DOOR_TYPE== DoorType.SINGLE){
             materialArrayList.add(new Material("00000000 00000", 10));   // single
         } else {
             materialArrayList.add(new Material("00000000 00000", 12));    // double
@@ -41,9 +45,6 @@ public class GetMaterialsForServiceDoor {
         } else {
             materialArrayList.add(new Material("00000000 00000", 0));
         }
-
-        // get material which depend on frame info
-        materialArrayList.addAll(getFrameMaterialsForServiceDoor());
 
         // get material which depend on porthole info
 
@@ -59,17 +60,10 @@ public class GetMaterialsForServiceDoor {
         // get material which fixed for any options
 
         // added fixed material to materialList
-        materialArrayList.addAll(MaterialConversionIdifServiceDoorFixedMaterialList.materialConversionIdifServiceDoorFixedMaterialList(DOOR_NAME, DOOR_LENGTH, DOOR_WIDTH));
+        materialArrayList.addAll(MaterialConversionIdifServiceDoorFixedMaterialList.materialConversionIdifServiceDoorFixedMaterialList(parameters));
 
-        // get material which depend on internal sheet info
-        materialArrayList.addAll(GetInternalSheetMaterials.getInternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, INTERNAL_SHEET_THICKNESS, INTERNAL_SHEET_TYPE, INTERNAL_SHEET_COLOR_CODE));
-
-        // get material which depend on EXTERNAL sheet info
-        materialArrayList.addAll(GetExternalSheetMaterials.getExternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, EXTERNAL_SHEET_THICKNESS, EXTERNAL_SHEET_TYPE, EXTERNAL_SHEET_COLOR_CODE));
-
-        //  get frame data
-        materialArrayList.addAll(GetFrameMaterials.getFrameMaterials(DOOR_LENGTH, DOOR_WIDTH, FRAME_TYPE, FRAME_MOUNTING_TYPE, FRAME_THICKNESS));
-
+        // get material which depend on internal sheet info and external sheet info and frame info
+        materialArrayList.addAll(GetSheetsFrameMaterials.getSheetsFrameMaterials(parameters));
 
         return materialArrayList;
     }

@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GetMaterialsForSlidingDoor {
-    public static List<Material> getMaterialsForSlidingDoor(String DOOR_TYPE,
+    public static List<Material> getMaterialsForSlidingDoor(Parameters parameters,
+                                                            String DOOR_TYPE,
                                                             float DOOR_THICKNESS,
                                                             float DOOR_LENGTH,
                                                             float DOOR_WIDTH,
@@ -30,14 +31,9 @@ public class GetMaterialsForSlidingDoor {
 
 
 
-        // get material which depend on internal sheet info
-        materialArrayList.addAll(GetInternalSheetMaterials.getInternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, INTERNAL_SHEET_THICKNESS, INTERNAL_SHEET_TYPE, INTERNAL_SHEET_COLOR_CODE));
+        // get material which depend on internal sheet info and external sheet info and frame info
+        materialArrayList.addAll(GetSheetsFrameMaterials.getSheetsFrameMaterials(parameters));
 
-        // get material which depend on EXTERNAL sheet info
-        materialArrayList.addAll(GetExternalSheetMaterials.getExternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, EXTERNAL_SHEET_THICKNESS, EXTERNAL_SHEET_TYPE, EXTERNAL_SHEET_COLOR_CODE));
-
-        //  get frame data
-        materialArrayList.addAll(GetFrameMaterials.getFrameMaterials(DOOR_LENGTH, DOOR_WIDTH, FRAME_TYPE, FRAME_MOUNTING_TYPE, FRAME_THICKNESS));
 
         return materialArrayList;
 

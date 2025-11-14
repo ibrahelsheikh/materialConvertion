@@ -1,19 +1,22 @@
 package com.example.demo.serviceimplementation;
 
+import com.example.demo.enums.DoorName;
+import com.example.demo.enums.DoorType;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MaterialConversionIdifServiceDoorFixedMaterialList {
 
-    public static List<Material> materialConversionIdifServiceDoorFixedMaterialList(String DOOR_NAME, float DOOR_LENGTH, float DOOR_WIDTH) {
+    public static List<Material> materialConversionIdifServiceDoorFixedMaterialList(Parameters parameters) {
 
 
         List<Material> materialArrayList = new ArrayList<>();
 
-        float materialConversionCalculateMaterialHisCode_11PLT003_00000 = MaterialConversionCalculateMaterialQuantityForServiceDoor.materialConversionCalculateMaterialHisCode_11PLT003_00000(DOOR_LENGTH, DOOR_WIDTH);
+        float materialConversionCalculateMaterialHisCode_11PLT003_00000 = MaterialConversionCalculateMaterialQuantityForServiceDoor.materialConversionCalculateMaterialHisCode_11PLT003_00000(parameters.DOOR_LENGTH, parameters.DOOR_WIDTH);
 
-        switch (DOOR_NAME) {
-            case "Service Door":
+        switch (parameters.DOOR_NAME) {
+            case SERVICE_DOOR:
                 materialArrayList.add(new Material("13TUF001 00000", 1));
                 materialArrayList.add(new Material("13TUC402 13012", 1));
                 materialArrayList.add(new Material("13TUC116 00000", 1));
@@ -25,20 +28,20 @@ public class MaterialConversionIdifServiceDoorFixedMaterialList {
                 break;
 
 
-            case "Swing Door":
+            case SWING_DOOR:
 //                materialArrayList.add(new Material("", ));
 
                 break;
 
 
-            case "Sliding Door":
+            case SLIDING_DOOR:
 //                materialArrayList.add(new Material("", ));
 
 
                 break;
 
 
-            case "Hinged Door":
+            case HINGED_DOOR:
                 materialArrayList.add(new Material("13CEC604 0000", 1));  // Ext. handle CSI with lock RAL7004/black with MTH logo
                 materialArrayList.add(new Material("13CN603 00000", 1));  // Int. handle CSI RAL7004/green certified EN179:2008
                 materialArrayList.add(new Material("25 AST 138 13067", 1));  // Int. handle CSI striker RAL7004
