@@ -4,7 +4,7 @@ public class MaterialConversionCalculateMaterialQuantityForHingedDoor {
 
     // DOOR_LENGTH and DOOR_WIDTH are in cm
 
-    public static float materialConversionCalculateMaterialHisCode_30BIA002_11041(float DOOR_LENGTH, float DOOR_WIDTH) {
+    public static double materialConversionCalculateMaterialHisCode_30BIA002_11041(double DOOR_LENGTH, double DOOR_WIDTH) {
 
         return DOOR_LENGTH * 2 + DOOR_WIDTH *2;
 

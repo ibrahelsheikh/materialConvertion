@@ -1,8 +1,6 @@
 package com.example.demo.serviceimplementation;
 
-import com.example.demo.enums.DoorDirection;
-import com.example.demo.enums.DoorName;
-import com.example.demo.enums.DoorType;
+import com.example.demo.enums.*;
 
 public class Parameters {
     DoorName DOOR_NAME;
@@ -11,17 +9,18 @@ public class Parameters {
     double DOOR_LENGTH;
     double DOOR_WIDTH;
     DoorDirection DOOR_DIRECTION;
-    String FRAME_TYPE;
-    String FRAME_MOUNTING_TYPE;
+    FrameType FRAME_TYPE;
+    FrameMountingType FRAME_MOUNTING_TYPE;
     double FRAME_THICKNESS;
-    String INTERNAL_SHEET_TYPE;
+    SheetType INTERNAL_SHEET_TYPE;
     String INTERNAL_SHEET_COLOR_CODE;
     double INTERNAL_SHEET_THICKNESS;
-    String EXTERNAL_SHEET_TYPE;
+    SheetType EXTERNAL_SHEET_TYPE;
     String EXTERNAL_SHEET_COLOR_CODE;
     double EXTERNAL_SHEET_THICKNESS;
-    DoorPorthole doorPorthole;
+    boolean EXIST_PORTHOLE;
+    PortholeShape PORTHOLE_SHAPE;
     double DOOR_HUGE;
-    String DOOR_CLOSER;
+    boolean DOOR_CLOSER_EXIST;
 
 }

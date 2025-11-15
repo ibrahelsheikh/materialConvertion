@@ -1,6 +1,5 @@
 package com.example.demo.serviceimplementation;
 
-import com.example.demo.enums.DoorDirection;
 import com.example.demo.enums.DoorName;
 import com.example.demo.enums.DoorType;
 import com.example.demo.enums.PortholeShape;
@@ -33,9 +32,9 @@ public class GetMaterialsForHingedDoor {
 
 
         // get material which depend on porthole info
-        if (parameters.doorPorthole.existPorthole) {
+        if (parameters.EXIST_PORTHOLE) {
             int portHoleGasketLength;
-            if ( parameters.doorPorthole.portholeShape == PortholeShape.CIRCULAR) {
+            if ( parameters.PORTHOLE_SHAPE == PortholeShape.CIRCULAR) {
                 // single door && porthole exist
                 portHoleGasketLength = 1;
 
@@ -64,7 +63,7 @@ public class GetMaterialsForHingedDoor {
 
 
         // get material which depend on DOOR_CLOSER and DOOR_CLOSER is existed or not
-        if (parameters.DOOR_CLOSER.equals("Exist")) {
+        if (parameters.DOOR_CLOSER_EXIST== true) {
             materialArrayList.add(new Material("00000000 00000", 1));  // Door closer for hinged door
         }
 
