@@ -10,7 +10,7 @@ public class Parameters {
     double DOOR_WIDTH;
 
     int DOOR_QUANTITY;                                   // number of doors
-    double price ;
+    double PRICE;
 
     DoorDirection DOOR_DIRECTION;                           // right or left
 
