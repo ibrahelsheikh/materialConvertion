@@ -36,7 +36,7 @@ public class Parameters {
     PortholeShape PORTHOLE_SHAPE;
 
     double DOOR_HUGE;
-    HUGE_TYPE HUGE_TYPE;
+    HugeType HUGE_TYPE;
 
     boolean DOOR_CLOSER_EXIST;
 
@@ -50,7 +50,7 @@ public class Parameters {
 
     StopperType STOPPER_TYPE;
 
-    int Trias_Number;
+    int TRIAS_NUMBER;
 
 
 

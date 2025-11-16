@@ -1,6 +1,6 @@
 package com.example.customiztaion.enums;
 
-public enum HUGE_TYPE {
+public enum HugeType {
     ITALY_180,
     ITALY_90,
     TURKEY,
