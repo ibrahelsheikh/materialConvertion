@@ -32,7 +32,7 @@ public class GetMaterialsForHingedDoor {
 
 
         // get material which depend on porthole info
-        if (parameters.EXIST_PORTHOLE) {
+        if (parameters.PORTHOLE_IS_EXIST) {
             int portHoleGasketLength;
             if ( parameters.PORTHOLE_SHAPE == PortholeShape.CIRCULAR) {
                 // single door && porthole exist
