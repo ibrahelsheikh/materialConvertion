@@ -17,8 +17,10 @@ public class Parameters {
     TemperatureRange TEMPERATURE_RANGE;                     // COOLING, FREEZING
 
     FrameType FRAME_TYPE;                                   // stainless steel 304, stainless steel 316, aluminum, galvanized steel
-    FrameMountingType FRAME_MOUNTING_TYPE;                  //
+    FrameMountingType FRAME_MOUNTING_TYPE;                  // Full ,
     double FRAME_THICKNESS;
+    AccessoryType IS_FRAME_MTH_OR_IDIF;
+    int FRAME_NUMBER_OF_ROBS;
 
     SheetType INTERNAL_SHEET_TYPE;
     String INTERNAL_SHEET_COLOR_CODE;

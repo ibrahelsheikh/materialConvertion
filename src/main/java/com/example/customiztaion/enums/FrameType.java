@@ -5,6 +5,7 @@ public enum FrameType {
     STAINLESS_STEEL_316,
     ALUMINUM,
     GALVANIZED_STEEL,
+    PVC,
     NULL
 
 }
