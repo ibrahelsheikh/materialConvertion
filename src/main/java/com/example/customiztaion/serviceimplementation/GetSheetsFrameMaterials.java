@@ -77,29 +77,67 @@ public class GetSheetsFrameMaterials {
             }
         }
 
-        // Sliding Door - PVC - Full
+        // Sliding Door - PVC - Full - 10CM
         if (parameters.DOOR_NAME == DoorName.SLIDING_DOOR &&
                 parameters.FRAME_TYPE == FrameType.PVC &&
                 parameters.FRAME_MOUNTING_TYPE == FrameMountingType.FULL &&
-                parameters.FRAME_THICKNESS == 10) {
+                parameters.FRAME_THICKNESS >= 10) {
 
             if (parameters.FRAME_NUMBER_OF_EDGES == 3) {
 
                 double front = GetThreeEdgesFrameQuantity(parameters, 14);
                 double back = GetThreeEdgesFrameQuantity(parameters, 14);
-                double middle = GetThreeEdgesFrameQuantity(parameters, 14);
+                double middle = GetThreeEdgesFrameQuantity(parameters, 2);
 
-                materialArrayList.add(new Material("", front));
-                materialArrayList.add(new Material("", back));
-                materialArrayList.add(new Material("", middle));
+                materialArrayList.add(new Material("SP063", front));
+                materialArrayList.add(new Material("SP014", back));
+                materialArrayList.add(new Material("SP012", middle));
 
-            } else if (parameters.FRAME_NUMBER_OF_EDGES == 4) {
+                if (parameters.FRAME_THICKNESS> 10) {
+                    int multiplier = 0;
 
-                double quantity = GetFourEdgesFrameQuantity(parameters, 14);
-                materialArrayList.add(new Material("SP026", quantity));
+                    if (parameters.FRAME_THICKNESS == 11 |  parameters.FRAME_THICKNESS == 12) {
+                        multiplier = 1;
+
+                        materialArrayList.add(new Material("SP012", middle));
+
+                    } else if (parameters.FRAME_THICKNESS % 2 == 0 ) {
+
+                        // even
+
+                        multiplier = (int) (( parameters.FRAME_THICKNESS -10 ) /2);
+
+                        materialArrayList.add(new Material("SP012", multiplier* middle));
+
+
+                    } else if (parameters.FRAME_THICKNESS % 2 == 1 ) {
+
+                        materialArrayList.add(new Material("SP110", middle));
+
+                        // odd
+
+                        multiplier = (int) (( parameters.FRAME_THICKNESS - 13 ) /2 );
+
+                        materialArrayList.add(new Material("SP012", multiplier * middle));
+
+                    }
+
+
+                    double extraMiddle = GetThreeEdgesFrameQuantity(parameters, 2);
+                    materialArrayList.add(new Material("SP012", extraMiddle));
+                }
+
+            }  else if (parameters.FRAME_NUMBER_OF_EDGES == 4) {
+
+                double front = GetFourEdgesFrameQuantity(parameters, 14);
+                double back = GetFourEdgesFrameQuantity(parameters, 14);
+                double middle = GetFourEdgesFrameQuantity(parameters, 2);
+
+                materialArrayList.add(new Material("SP063", front));
+                materialArrayList.add(new Material("SP014", back));
+                materialArrayList.add(new Material("SP012", middle));
             }
         }
-
         return materialArrayList;
     }
 
